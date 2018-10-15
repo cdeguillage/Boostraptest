@@ -10,7 +10,8 @@ $(document).ready(function () {
 
 });
 
-
+// ////////////////////////////////////////////////////
+// JS
 var maChaine = document.getElementById("maChaine").getAttribute("data-affiche");
 var maChaineDecompose = maChaine.split("");
 var ChaineAAfficher = "";
@@ -32,3 +33,13 @@ function boucle() {
 }
 
 boucle(ChaineAAfficher);
+
+// ////////////////////////////////////////////////////
+// JQUERY
+var word = $('#maChaine').data('affiche').trim();
+$('#maChaine').append('');
+for(var i=0; i<word.length; i++) {
+    setTimeout(function () {
+        $('#maChaine').append(word[i]);
+    }, 1000);
+}
