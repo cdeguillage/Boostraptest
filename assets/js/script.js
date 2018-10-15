@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 // ////////////////////////////////////////////////////
 // JS
-var maChaine = document.getElementById("maChaine").getAttribute("data-affiche");
+var maChaine = document.getElementById("maChaineJS").getAttribute("data-affiche");
 var maChaineDecompose = maChaine.split("");
 var ChaineAAfficher = "";
 var timeBoucle;
@@ -22,7 +22,7 @@ function boucle() {
     if (maChaineDecompose.length > 0)
     {
         ChaineAAfficher += maChaineDecompose.shift();
-        document.getElementById("maChaine").innerHTML = ChaineAAfficher;
+        document.getElementById("maChaineJS").innerHTML = ChaineAAfficher;
     }
     else
     {
@@ -36,10 +36,10 @@ boucle(ChaineAAfficher);
 
 // ////////////////////////////////////////////////////
 // JQUERY
-var word = $('#maChaine').data('affiche').trim();
-$('#maChaine').append('');
-for(var i=0; i<word.length; i++) {
+$('#maChaineJQUERY').empty();
+var chaine = $('#maChaineJQUERY').data('affiche').trim();
+for (let i = 0; i < chaine.length; i++) {
     setTimeout(function () {
-        $('#maChaine').append(word[i]);
-    }, 1000);
+        $('#maChaineJQUERY').append(chaine[i]);
+    }, 300*i );
 }
